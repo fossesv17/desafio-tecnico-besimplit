@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="flex space-x-6">
+  <h1 class="font-semibold text-5xl pb-3 w-full">
+    Mis Tareas
+  </h1>
+  <div class="whitespace-nowrap">
+    <button 
+      class="bg-blue-500 hover:bg-blue-700 rounded px-3 py-1 text-white font-semibold text-xl h-[80%]"
+      hx-get="/api/tasks/create_task/"
+      hx-target="#modal-container"
+      hx-swap="innerHTML"
+    >
+      Nueva tarea
+    </button>
+  </div>
+</div>
+<div class="flex border-b border-gray-500 py-2 pt-6">
+  <div class="w-1/2 font-semibold text-3xl px-4">Tareas</div>
+  <div class="w-1/4 text-gray-700 text-3xl">Estado</div>
+  <div class="w-1/4 text-3xl text-gray-500 ">Acciones</div>
+</div>
+<div id="task-list" hx-get="/api/tasks/task_list/" hx-trigger="load, taskListUpdate from:body" hx-target="#task-list"></div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% load static %}
+<div id="modal-backdrop" 
+    class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
+>
+  <div id="modal-box" class="bg-white p-6 rounded shadow-lg w-[30%] relative">
+    <button 
+      id="modal-close" class="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
+    >
+      ✖
+    </button>
+
+    <div>
+      {% block modal_content %}{% endblock %}
+    </div>
+  </div>
+</div>
+<script>
+    document.addEventListener('click', function(event) {
+    const backdrop = document.getElementById('modal-backdrop');
+    const modal = document.getElementById('modal-box');
+    if (!backdrop || !modal) return;
+
+    if (backdrop.contains(event.target) && !modal.contains(event.target)) {
+      backdrop.remove();
+    }
+
+    const closeBtn = document.getElementById('modal-close');
+    if (closeBtn && event.target === closeBtn) {
+      backdrop.remove();
+    }
+    
+    const cancelBtn = document.getElementById('cancel-btn');
+    if (cancelBtn && event.target === cancelBtn) {
+      backdrop.remove();
+    }
+
+  });
+</script>

@@ -1,0 +1,29 @@
+{% extends 'fragments/modal.html' %}
+
+{% block modal_content %}
+<h2 class="text-2xl font-semibold mb-4 text-red-500">Eliminar Tarea</h2>
+  <p class="mb-6 text-xl">¿Seguro que deseas eliminar <strong>{{ task.title }}</strong>?</p>
+  {% csrf_token %}
+  <form
+    hx-delete="/api/tasks/{{ task.id }}/delete_task/"
+    hx-target="#modal-container"
+    hx-swap="innerHTML"
+    class="flex justify-end gap-2">
+
+    <div class="flex justify-end gap-2 mt-3">
+        <button type="button"
+                class="px-4 py-2 bg-gray-300 rounded text-xl"
+                id="cancel-btn"
+        >
+          Cancelar
+        </button>
+    
+        <button 
+            type="submit"
+            class="bg-red-500 text-white rounded px-3 py-1 hover:bg-red-800 text-xl"
+        >
+          Eliminar
+        </button>
+    </div>
+  </form>
+{% endblock %}

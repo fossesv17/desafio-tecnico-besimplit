@@ -1,0 +1,58 @@
+{% for task in tasks %}
+<div class="flex p-2 pl-4 mx-auto border-b border-gray-300 pb-8">
+  <div class="w-1/2">
+    <h3 class="font-semibold text-2xl">
+      {{ task.title }}
+    </h3>
+    <div class="font-normal text-2xl">
+      {{ task.description }}
+    </div>
+  </div>
+  <div class="w-1/4">
+    <label class="text-2xl">
+        <input
+            type='checkbox'
+            value="{{ task.completed }}"
+            {% if task.completed %}checked{% endif %}
+            hx-post="/api/tasks/{{ task.id }}/change_task_status/"
+            hx-swap="none"
+            class="w-6 h-6 text-green-600 border-gray-300 rounded"
+        >
+        {% if task.completed %}
+        Completada
+        {% else %}
+        Pendiente
+        {% endif %}
+    </label>
+    
+  </div>
+  <div class="w-1/4">
+    <button
+      class="bg-green-600 hover:bg-green-800 text-white font-semibold text-xl px-4 py-2 rounded transition"
+      hx-get="/api/tasks/{{ task.id }}/edit_task/"
+      hx-target="#modal-container"
+      hx-swap="innerHTML"
+    >
+      <p>
+        Editar tarea
+      </p>
+    </button>
+    <button
+        class="bg-red-500 hover:bg-red-800 text-white font-semibold text-xl px-4 py-2 rounded transition"
+        hx-get="/api/tasks/{{ task.id }}/delete_task/"
+        hx-target="#modal-container"
+        hx-swap="innerHTML"
+    >
+      <p>
+        Eliminar tarea
+      </p>
+    </button>
+  </div>
+</div>
+{% empty %}
+<div>
+<h3 class="font-normal text-xl pl-4 py-3">
+    No hay tareas
+</h3>    
+</div>
+{% endfor %}

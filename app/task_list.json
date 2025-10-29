@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Hacer la compra",
+    "description": "Comprar frutas, verduras y leche en el supermercado",
+    "completed": false,
+    "created_at": "2025-10-29"
+  },
+  {
+    "title": "Lavar la ropa",
+    "description": "Separar ropa blanca y de color, usar detergente y suavizante",
+    "completed": true,
+    "created_at": "2025-10-28 09:30"
+  },
+  {
+    "title": "Enviar correo al jefe",
+    "description": "Actualizar sobre el progreso del proyecto y enviar informe semanal",
+    "completed": false,
+    "created_at": "2025-10-29 14:15"
+  },
+  {
+    "title": "Hacer ejercicio",
+    "description": "Correr 5 km o hacer 30 minutos de yoga",
+    "completed": true,
+    "created_at": "2025-10-28 07:00"
+  },
+  {
+    "title": "Leer un libro",
+    "description": "Leer al menos 20 páginas del libro de desarrollo personal",
+    "completed": false,
+    "created_at": "2025-10-29"
+  },
+  {
+    "title": "Preparar la cena",
+    "description": "Cocinar pasta con verduras y pollo",
+    "completed": true,
+    "created_at": "2025-10-28 18:45"
+  },
+  {
+    "title": "Limpiar el escritorio",
+    "description": "Organizar papeles, limpiar polvo y dejar cables ordenados",
+    "completed": false,
+    "created_at": "2025-10-29"
+  },
+  {
+    "title": "Pagar las cuentas",
+    "description": "Pagar electricidad y agua antes del fin de mes",
+    "completed": false,
+    "created_at": "2025-10-27 16:20"
+  }
+]
