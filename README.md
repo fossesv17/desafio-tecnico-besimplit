@@ -44,6 +44,12 @@ Para crear tarea: [localhost:8000/api/tasks/](localhost:8000/api/tasks/create_ta
 
 Tarea especifica: [localhost:8000/api/tasks/\<id>/](localhost:8000/api/tasks/\<id>)
 
+En termino de decisiones tecnicas, la ya mencionada de optar por un viewset para disponer de una api por defecto para modelos, en este caso el modelo Task.
+
+Se dio tiempo en crear modales de formularios para representar una interaccion parecida a lo esperado en aplicaciones mucho mas completas.
+
+Lo demas corresponde a un desarrollo mas bien comun o estandar en Django usando templates para el frontend.
+
 Para la implementacion se considero el tiempo y la poca experiencia con HTMX por lo que es una vista bastante simple y se priorizo cumplir los requisitos.
 
 En caso de haber tenido mas tiempo, se mejoraria el aspecto visual, se agregarian filtros para ordenar tareas. 
